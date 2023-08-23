@@ -15,15 +15,15 @@ jobs:
         uses: actions/checkout@v3 # This is a reference to some code to run
 
       # This step installs the Python version we want
-      - name: Set up Python 3.9
+      - name: Set up Python 3.11
         uses: actions/setup-python@v4
         with:
-          python-version: 3.9
+          python-version: 3.11
 
       # This step installs pip, pipenv, and our dependencies
       - name: Install dependencies
         run: | # Note that there's no reference here — just commands to run
-          python -m pip install --upgrade pip
+          pyenv python -m pip install --upgrade pip
           pip install pipenv
           pipenv install --dev
 
